@@ -24,10 +24,11 @@ android {
             applicationIdSuffix ".debug"
         }
 
-        release {
+        //Until this bug is open: https://github.com/evant/gradle-retrolambda/issues/65
+        /*release {
             minifyEnabled true
             signingConfig  android.signingConfigs.debug //just for proguard test
-        }
+        }*/
     }
 
     dependencies {
