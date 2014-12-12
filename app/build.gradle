@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+apply plugin: 'retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
+
+    defaultConfig {
+        applicationId "net.grzechocinski.android.dagger2example"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "dev"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+
+        release {
+            minifyEnabled true
+            signingConfig  android.signingConfigs.debug //just for proguard test
+        }
+    }
+
+    dependencies {
+        compile 'com.android.support:appcompat-v7:21.0.2'
+        compile 'com.jakewharton:butterknife:6.0.0'
+        compile 'com.google.dagger:dagger:2.0-SNAPSHOT'
+
+        androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.2.1'
+        androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
+        androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
+
+        apt "org.projectlombok:lombok:1.14.8"
+        apt "com.google.dagger:dagger-compiler:2.0-SNAPSHOT"
+
+        provided 'org.glassfish:javax.annotation:10.0-b28'
+        provided "org.projectlombok:lombok:1.14.8"
+    }
+}
