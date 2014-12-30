@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'retrolambda'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.champeau.gradle.groovy-android'
 
 android {
     compileSdkVersion 21
@@ -44,5 +45,7 @@ android {
 
         provided 'org.glassfish:javax.annotation:10.0-b28'
         provided "org.projectlombok:lombok:1.14.8"
+
+        compile 'org.codehaus.groovy:groovy:2.4.0-beta-3:grooid'
     }
 }
