@@ -46,7 +46,7 @@ public class HomeActivity extends FragmentActivity {
         //Inject to non-private fields
         D2EApplication.component(this).inject(this);
 
-        //Inject to private fields of local variables
+        //Inject to private fields or local variables
         D2ECollectionUtils d2EStringUtils = D2EApplication.component(this).getD2EStringUtils();
 
         //Lambda usage example
