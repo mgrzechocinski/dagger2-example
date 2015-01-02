@@ -1,4 +1,4 @@
-package net.grzechocinski.android.dagger2example.internal.utils;
+package net.grzechocinski.android.dagger2example.utils;
 
 import java.util.Arrays;
 import java.util.Collections;

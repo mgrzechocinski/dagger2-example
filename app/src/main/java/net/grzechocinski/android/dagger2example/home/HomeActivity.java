@@ -11,7 +11,8 @@ import java.util.List;
 import javax.inject.Inject;
 import net.grzechocinski.android.dagger2example.D2EApplication;
 import net.grzechocinski.android.dagger2example.R;
-import net.grzechocinski.android.dagger2example.internal.utils.D2ECollectionUtils;
+import net.grzechocinski.android.dagger2example.utils.D2ECollectionUtils;
+import net.grzechocinski.android.dagger2example.utils.NetworkStateManager;
 
 public class HomeActivity extends FragmentActivity {
 
@@ -20,11 +21,17 @@ public class HomeActivity extends FragmentActivity {
     @Inject
     SharedPreferences sharedPreferences;
 
+    @Inject
+    NetworkStateManager networkStateManager;
+
     @InjectView(R.id.d2e_id_tv_pref)
     TextView preferenceValueTextView;
 
     @InjectView(R.id.d2e_id_tv_util)
     TextView utilOutputTextView;
+
+    @InjectView(R.id.d2e_id_tv_network_state)
+    TextView networkStateTextView;
 
     @InjectView(R.id.d2e_id_btn_load_preference)
     Button button;
@@ -51,5 +58,8 @@ public class HomeActivity extends FragmentActivity {
         //Method reference example
         List<String> sortedAscending = d2EStringUtils.toSortedList(String::compareTo, "zombie", "dog", "animal");
         utilOutputTextView.setText(sortedAscending.get(0));
+
+        //Custom class (NetworkStateManager) with nested dependencies provided by constructor
+        networkStateTextView.setText(getString(R.string.network_text, networkStateManager.isConnectedOrConnecting()));
     }
 }

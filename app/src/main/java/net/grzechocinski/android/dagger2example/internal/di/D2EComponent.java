@@ -6,7 +6,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.grzechocinski.android.dagger2example.D2EApplication;
 import net.grzechocinski.android.dagger2example.home.HomeActivity;
-import net.grzechocinski.android.dagger2example.internal.utils.D2ECollectionUtils;
+import net.grzechocinski.android.dagger2example.utils.D2ECollectionUtils;
 
 @Singleton
 @Component(modules = {SystemServicesModule.class, D2EUtilsModule.class})

@@ -4,5 +4,6 @@
     <string name="app_name">Dagger2Example</string>
     <string name="load_preference">Load preference</string>
     <string name="click_hint"><![CDATA[<click button>]]></string>
+    <string name="network_text">Network connected? %1$s</string>
 
 </resources>

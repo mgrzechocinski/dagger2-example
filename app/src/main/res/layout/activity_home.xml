@@ -16,6 +16,13 @@
               style="@style/BasicTextView"
               android:text="@string/click_hint"
               android:layout_marginBottom="20dp"
+              android:id="@+id/d2e_id_tv_network_state"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              style="@style/BasicTextView"
+              android:text="@string/click_hint"
+              android:layout_marginBottom="20dp"
               android:id="@+id/d2e_id_tv_pref"/>
 
     <Button android:id="@+id/d2e_id_btn_load_preference"
