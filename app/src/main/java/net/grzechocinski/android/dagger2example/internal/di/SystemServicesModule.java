@@ -21,6 +21,11 @@ public class SystemServicesModule {
     }
 
     @Provides
+    Context provideContext(){
+        return application;
+    }
+
+    @Provides
     @Singleton
     SharedPreferences providePreferenceManager() {
         return PreferenceManager.getDefaultSharedPreferences(application);

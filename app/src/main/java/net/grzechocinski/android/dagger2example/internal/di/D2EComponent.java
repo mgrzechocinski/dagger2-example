@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.grzechocinski.android.dagger2example.D2EApplication;
+import net.grzechocinski.android.dagger2example.home.BaseActivity;
 import net.grzechocinski.android.dagger2example.home.HomeActivity;
 import net.grzechocinski.android.dagger2example.utils.D2ECollectionUtils;
 
