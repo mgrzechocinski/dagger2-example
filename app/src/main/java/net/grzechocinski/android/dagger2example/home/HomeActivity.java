@@ -11,6 +11,7 @@ import net.grzechocinski.android.dagger2example.D2EApplication;
 import net.grzechocinski.android.dagger2example.R;
 import net.grzechocinski.android.dagger2example.home.twitter.Twitter;
 import net.grzechocinski.android.dagger2example.utils.D2ECollectionUtils;
+import net.grzechocinski.android.dagger2example.utils.MyView;
 import net.grzechocinski.android.dagger2example.utils.NetworkStateManager;
 
 public class HomeActivity extends BaseActivity {
@@ -37,6 +38,9 @@ public class HomeActivity extends BaseActivity {
 
     private D2ECollectionUtils d2EStringUtils;
 
+    @InjectView(R.id.myview)
+    MyView myView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +59,7 @@ public class HomeActivity extends BaseActivity {
             sharedPreferences.edit().putString(PREF_KEY_SAMPLE, "foo").apply();
             preferenceValueTextView.setText(sharedPreferences.getString(PREF_KEY_SAMPLE, "bar"));
             twitter.tweet("Hey, I clicked button!");
+            myView.redraw();
         });
 
         //Method reference example

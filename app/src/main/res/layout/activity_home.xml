@@ -30,4 +30,10 @@
             android:layout_height="wrap_content"
             android:text="@string/load_preference"/>
 
+
+    <net.grzechocinski.android.dagger2example.utils.MyView
+            android:id="@+id/myview"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
 </LinearLayout>
