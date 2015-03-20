@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
-apply plugin: 'retrolambda'
+apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "net.grzechocinski.android.dagger2example"
@@ -31,18 +31,14 @@ android {
     }
 
     dependencies {
-        compile 'com.android.support:appcompat-v7:21.0.2'
-        compile 'com.jakewharton:butterknife:6.0.0'
+        compile 'com.android.support:appcompat-v7:21.0.3'
+        compile 'com.jakewharton:butterknife:6.1.0'
         compile 'com.google.dagger:dagger:2.0-SNAPSHOT'
 
-        androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.2.1'
-        androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
-        androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-
-        apt "org.projectlombok:lombok:1.14.8"
+        apt "org.projectlombok:lombok:1.16.2"
         apt "com.google.dagger:dagger-compiler:2.0-SNAPSHOT"
 
         provided 'javax.annotation:jsr250-api:1.0'
-        provided "org.projectlombok:lombok:1.14.8"
+        provided "org.projectlombok:lombok:1.16.2"
     }
 }
