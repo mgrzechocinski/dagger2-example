@@ -1,24 +1,16 @@
 package net.grzechocinski.android.dagger2example;
 
-import android.app.Application;
-import android.content.Context;
-import net.grzechocinski.android.dagger2example.internal.di.D2EComponent;
+import timber.log.Timber;
 
-public class D2EApplication extends Application {
-
-    private D2EComponent component;
+public class D2EApplication extends D2EBaseApplication {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        buildComponentAndInject();
+        disableLogging();
     }
 
-    public void buildComponentAndInject() {
-        component = D2EComponent.Initializer.init(this);
-    }
-
-    public static D2EComponent component(Context context) {
-        return ((D2EApplication) context.getApplicationContext()).component;
+    private void disableLogging() {
+        Timber.plant(new Timber.HollowTree());
     }
 }
