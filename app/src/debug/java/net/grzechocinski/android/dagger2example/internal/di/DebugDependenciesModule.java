@@ -1,8 +1,11 @@
 package net.grzechocinski.android.dagger2example.internal.di;
 
-import dagger.Provides;
 import javax.inject.Singleton;
 
+import dagger.Module;
+import dagger.Provides;
+
+@Module
 public class DebugDependenciesModule {
 
     @Singleton
