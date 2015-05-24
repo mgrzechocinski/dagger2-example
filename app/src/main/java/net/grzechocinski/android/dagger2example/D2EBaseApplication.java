@@ -5,7 +5,8 @@ import android.content.Context;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.grzechocinski.android.dagger2example.internal.di.D2EComponent;
-import net.grzechocinski.android.dagger2example.internal.di.Dagger_D2EComponent;
+
+import net.grzechocinski.android.dagger2example.internal.di.DaggerD2EComponent;
 import net.grzechocinski.android.dagger2example.internal.di.SystemServicesModule;
 
 public abstract class D2EBaseApplication extends Application {
@@ -30,7 +31,7 @@ public abstract class D2EBaseApplication extends Application {
     public final static class DaggerComponentInitializer {
 
         public static D2EComponent init(D2EBaseApplication app) {
-            return Dagger_D2EComponent.builder()
+            return DaggerD2EComponent.builder()
                     .systemServicesModule(new SystemServicesModule(app))
                     .build();
         }
